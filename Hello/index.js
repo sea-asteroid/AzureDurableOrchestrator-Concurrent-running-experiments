@@ -23,29 +23,25 @@ module.exports = async function (context) {
         } 
         return b;
     }
-    console.log(context.bindings.name);
+    //console.log(context.bindings.name);
     var res = context.bindings.name;
-    console.log('res', res);
+    //console.log('res', res);
     var obj = res.split(" ");
     obj_id = obj[1];
     obj_count = obj[0];
-    console.log('obj_id', obj_id);
-    console.log('obj_count', obj_count);
+    //console.log('obj_id', obj_id);
+    //console.log('obj_count', obj_count);
     
     let time_start_fibonacci = new Date().getTime();
-
-    console.log(obj_id + ' time_start_fibonacci =', time_start_fibonacci);
+    console.log('InstanceID = ' + obj_id + ' time_start_fibonacci =', time_start_fibonacci);
     let va = fibonacci(num);
     let time_end_fibonacci = new Date().getTime();
-  
-    console.log(obj_id + ' time_end_fibonacci =', time_end_fibonacci);
+    console.log('InstanceID = ' + obj_id + ' time_end_fibonacci =', time_end_fibonacci);
     time_wait = time_end_fibonacci - time_start_fibonacci;
-  
-    //obj.count
-    console.log(obj_id + ' time_duratioin_fibonacci =', time_wait);
+
+    console.log('InstanceID = ' + obj_id + ' time_duratioin_fibonacci =', time_wait);
     var aaa = parseInt(obj_count, 10);
     return aaa+100;
-
     /*
     console.log(context.bindings.name)
     var obj = JSON.parse(context.bindings.name);

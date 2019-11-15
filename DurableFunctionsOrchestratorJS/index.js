@@ -54,20 +54,20 @@ module.exports = df.orchestrator(function* (context) {
    return outputs;
    */
   let instanceID = context.df.instanceId;
-  console.log('InstanceID' + instanceID, 'Start count = ', count);
+  console.log('InstanceID = ' + instanceID, 'Start count = ', count);
 
   count += 1;
 
   let tmp1 = yield context.df.callActivity("Hello", `${count} ${instanceID}`);
-  console.log(instanceID + ' one count = %d', tmp1);
+  console.log('InstanceID = ' + instanceID + ' one count = %d', tmp1);
   outputs.push(tmp1);
 
   let tmp2 = yield context.df.callActivity("Hello", `${tmp1} ${instanceID}`);
-  console.log(instanceID + ' two count = %d', tmp2);
+  console.log('InstanceID = ' + instanceID + ' two count = %d', tmp2);
   outputs.push(tmp2);
 
   let tmp3 = yield context.df.callActivity("Hello", `${tmp2} ${instanceID}`);
-  console.log(instanceID + ' three count = %d', tmp3);
+  console.log('InstanceID = ' + instanceID + ' three count = %d', tmp3);
   outputs.push(tmp3);
 
   return outputs;
