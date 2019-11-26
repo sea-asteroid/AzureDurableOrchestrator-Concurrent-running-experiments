@@ -1,9 +1,16 @@
 {
-  "bindings": [
-    {
-      "name": "context",
-      "type": "orchestrationTrigger",
-      "direction": "in"
-    }
-  ]
+  "bindings": [
+    {
+      "name": "context",
+      "type": "orchestrationTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "myOutputBlob",
+      "type": "blob",
+      "path": "samples-workitems/demo-Copy",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ]
 }
